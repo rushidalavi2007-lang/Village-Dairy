@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Home - Fresh Village Dairy{% endblock %}
+{% block content %}
+<header class="hero">
+    <h1>Pure Farm-Fresh Dairy</h1>
+    <p>Directly from local village farms to your table every morning.</p>
+</header>
+
+<section class="products-section">
+    <h2>Our Products</h2>
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1563636619-e9143da7973b?w=600&q=80" alt="Fresh Milk">
+            <h3>Raw Cow Milk</h3>
+            <p class="price">₹60 / Liter</p>
+            <p>Unadulterated, wholesome milk rich in natural nutrients.</p>
+            <a href="{{ url_for('checkout') }}" class="btn">Order Now</a>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?w=600&q=80" alt="Pure Butter">
+            <h3>Pure Butter</h3>
+            <p class="price">₹450 / Kg</p>
+            <p>Traditional hand-churned yellow farm butter.</p>
+            <a href="{{ url_for('checkout') }}" class="btn">Order Now</a>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=80" alt="Thick Curd">
+            <h3>Thick Curd</h3>
+            <p class="price">₹80 / Kg</p>
+            <p>Naturally cultured creamy curd packed with probiotics.</p>
+            <a href="{{ url_for('checkout') }}" class="btn">Order Now</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

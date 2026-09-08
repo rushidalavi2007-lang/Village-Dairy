@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Cancel Order - Fresh Village Dairy{% endblock %}
+{% block content %}
+<div class="form-container">
+    <h2>Cancel an Order</h2>
+    <p>Enter your unique Order ID below to cancel your delivery.</p>
+    
+    {% if message %}
+        <div class="alert">{{ message }}</div>
+    {% endif %}
+
+    <form method="POST">
+        <div class="form-group">
+            <label>Order ID:</label>
+            <input type="number" name="order_id" required placeholder="Enter Order ID">
+        </div>
+        <button type="submit" class="btn btn-danger">Cancel Order</button>
+    </form>
+
+    <hr style="margin: 2rem 0; border:0; border-top:1px solid #ddd;">
+    
+    <h3>Recent Orders in System:</h3>
+    {% if orders %}
+        <ul style="list-style: none; padding: 0;">
+            {% for o in orders %}
+                <li style="background: #fafafa; padding: 12px; margin-bottom: 8px; border-radius: 4px; border: 1px solid #ddd;">
+                    <strong>Order #{{ o.id }}</strong> - {{ o.name }} | {{ o.product }} (Qty: {{ o.quantity }}) 
+                    <span style="float: right; color: {% if o.status == 'Cancelled' %}red{% else %}green{% endif %}; font-weight: bold;">{{ o.status }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No orders placed in this session yet.</p>
+    {% endif %}
+</div>
+{% endblock %}

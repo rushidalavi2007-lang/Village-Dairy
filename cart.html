@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Your Cart - Fresh Village Dairy{% endblock %}
+{% block content %}
+<div class="card-box">
+    <h2>Your Shopping Cart</h2>
+    <table class="cart-table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Raw Cow Milk</td>
+                <td>₹60 / L</td>
+                <td>2 Liters</td>
+                <td>₹120</td>
+            </tr>
+        </tbody>
+    </table>
+    <div style="text-align: right;">
+        <h3>Total: ₹120</h3>
+        <a href="{{ url_for('checkout') }}" class="btn" style="width: auto;">Proceed to Checkout</a>
+    </div>
+</div>
+{% endblock %}
