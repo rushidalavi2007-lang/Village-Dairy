@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Order Placed - Fresh Village Dairy{% endblock %}
+{% block content %}
+<div class="success-box" style="text-align: center;">
+    <h2>🎉 Order Placed Successfully!</h2>
+    <p>Thank you, <strong>{{ name }}</strong>. Your order has been placed.</p>
+    
+    <div class="order-receipt">
+        <p><strong>Order ID:</strong> #{{ order_id }}</p>
+        <p><strong>Product:</strong> {{ product }}</p>
+        <p><strong>Quantity:</strong> {{ quantity }}</p>
+        <p><strong>Payment Mode:</strong> {{ payment_mode }}</p> <!-- NEW -->
+        <p style="color: green; font-weight: bold;">Status: Confirmed</p>
+    </div>
+    
+    <p>Save your <strong>Order ID (#{{ order_id }})</strong> if you wish to cancel it later.</p>
+    <a href="{{ url_for('cancel_order') }}" class="btn-secondary">Go to Cancellation Page</a>
+</div>
+{% endblock %}
