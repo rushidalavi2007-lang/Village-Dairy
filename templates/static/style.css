@@ -288,3 +288,36 @@ img, video {
     white-space: nowrap !important;
   }
 }
+
+/* Fix Card Heights and Image Alignment */
+.products, .items, .card-container, .row, .grid, [class*="product"] {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: stretch !important;
+  justify-content: center !important;
+}
+
+.card, [class*="card"] {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  height: auto !important;
+  min-height: 100% !important;
+}
+
+/* Force All 3 Images to the Exact Same Size */
+.card img, [class*="card"] img {
+  width: 100% !important;
+  height: 230px !important;
+  min-height: 230px !important;
+  max-height: 230px !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  border-radius: 6px !important;
+  display: block !important;
+}
+
+/* Align All Buttons to the Bottom Row */
+.card button, .card .btn, .card a.btn, [class*="card"] button {
+  margin-top: auto !important;
+}
