@@ -83,5 +83,11 @@ def ratings_page():
         
     return render_template('ratings.html', ratings=ratings_db)
 
+
+@app.route('/robots.txt')
+def robots():
+    content = "User-agent: *\nAllow: /\n"
+    return content, 200, {'Content-Type': 'text/plain'}
+
 if __name__ == '__main__':
     app.run(debug=True)
