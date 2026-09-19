@@ -1,38 +1,182 @@
 {% extends "base.html" %}
 {% block title %}Home - DR-Fresh Village Dairy{% endblock %}
 {% block content %}
-<header class="hero">
-    <h1>Pure Farm-Fresh Dairy</h1>
-    <p>Directly from local village farms to your table every morning.</p>
-</header>
-
-<section class="products-section">
-    <h2>Our Products</h2>
-    <div class="product-grid">
-        <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1563636619-e9143da7973b?w=600&q=80" alt="Fresh Milk">
-            <h3>Raw Cow Milk</h3>
-            <p class="price">₹60 / Liter</p>
-            <p>Unadulterated, wholesome milk rich in natural nutrients.</p>
-            <a href="{{ url_for('checkout') }}" class="btn">Order Now</a>
-        </div>
-        <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?w=600&q=80" alt="Pure Butter">
-            <h3>Pure Butter</h3>
-            <p class="price">₹450 / Kg</p>
-            <p>Traditional hand-churned yellow farm butter.</p>
-            <a href="{{ url_for('checkout') }}" class="btn">Order Now</a>
-        </div>
-        <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=80" alt="Thick Curd">
-            <h3>Thick Curd</h3>
-            <p class="price">₹80 / Kg</p>
-            <p>Naturally cultured creamy curd packed with probiotics.</p>
-            <a href="{{ url_for('checkout') }}" class="btn">Order Now</a>
-        </div>
+<section class="deal-banner">
+    <div class="deal-copy">
+        <span class="deal-tag">SPECIAL DEAL</span>
+        <h1>Farm Fresh Dairy, Delivered In 10 Minutes!</h1>
+        <p>Bring home pure milk, curd, paneer, ghee, sweets, and village dairy essentials at the best everyday prices.</p>
+        <a href="{{ url_for('checkout') }}" class="primary-btn">Order Now</a>
+    </div>
+    <div class="deal-badges">
+        <span>✔ 100% Fresh & Hygienic</span>
+        <span>✔ Up to 25% Off</span>
     </div>
 </section>
+
+<section class="categories-wrap">
+    <div class="section-header">
+        <h2>Explore Categories</h2>
+        <p>Pick your favorite dairy essentials or browse through curated village products</p>
+    </div>
+
+    <div class="category-list">
+        <button class="category-pill active" data-filter="all">🛍 All Dairy</button>
+        <button class="category-pill" data-filter="milk">🥛 Milk & Cream</button>
+        <button class="category-pill" data-filter="curd">🍶 Curd & Butter</button>
+        <button class="category-pill" data-filter="paneer">🧀 Paneer & Cheese</button>
+        <button class="category-pill" data-filter="sweets">🍮 Sweets & Dessert</button>
+    </div>
+</section>
+
+<section class="product-grid">
+    <article class="product-card" data-category="milk">
+        <div class="product-tag discount">20% OFF</div>
+        <div class="product-image img-milk"></div>
+        <div class="product-meta">
+            <span class="product-size">1 L</span>
+            <h3>Pure Cow Milk</h3>
+            <div class="price-row">
+                <div class="price-group">
+                    <span class="old-price">₹70</span>
+                    <span class="new-price">₹60</span>
+                </div>
+                <a href="{{ url_for('checkout') }}" class="add-btn">ADD +</a>
+            </div>
+        </div>
+    </article>
+
+    <article class="product-card" data-category="curd">
+        <div class="product-tag discount">18% OFF</div>
+        <div class="product-image img-butter"></div>
+        <div class="product-meta">
+            <span class="product-size">500 g</span>
+            <h3>Pure Farm Butter</h3>
+            <div class="price-row">
+                <div class="price-group">
+                    <span class="old-price">₹500</span>
+                    <span class="new-price">₹450</span>
+                </div>
+                <a href="{{ url_for('checkout') }}" class="add-btn">ADD +</a>
+            </div>
+        </div>
+    </article>
+
+    <article class="product-card" data-category="curd">
+        <div class="product-tag discount">15% OFF</div>
+        <div class="product-image img-curd"></div>
+        <div class="product-meta">
+            <span class="product-size">1 Kg</span>
+            <h3>Fresh Thick Curd</h3>
+            <div class="price-row">
+                <div class="price-group">
+                    <span class="old-price">₹95</span>
+                    <span class="new-price">₹80</span>
+                </div>
+                <a href="{{ url_for('checkout') }}" class="add-btn">ADD +</a>
+            </div>
+        </div>
+    </article>
+
+    <article class="product-card" data-category="paneer">
+        <div class="product-tag discount">25% OFF</div>
+        <div class="product-image img-paneer"></div>
+        <div class="product-meta">
+            <span class="product-size">250 g</span>
+            <h3>Fresh Paneer</h3>
+            <div class="price-row">
+                <div class="price-group">
+                    <span class="old-price">₹200</span>
+                    <span class="new-price">₹150</span>
+                </div>
+                <a href="{{ url_for('checkout') }}" class="add-btn">ADD +</a>
+            </div>
+        </div>
+    </article>
+
+    <article class="product-card" data-category="milk">
+        <div class="product-tag discount">14% OFF</div>
+        <div class="product-image img-ghee"></div>
+        <div class="product-meta">
+            <span class="product-size">500 ml</span>
+            <h3>A2 Ghee</h3>
+            <div class="price-row">
+                <div class="price-group">
+                    <span class="old-price">₹650</span>
+                    <span class="new-price">₹560</span>
+                </div>
+                <a href="{{ url_for('checkout') }}" class="add-btn">ADD +</a>
+            </div>
+        </div>
+    </article>
+
+    <article class="product-card" data-category="sweets">
+        <div class="product-tag discount">22% OFF</div>
+        <div class="product-image img-sweets"></div>
+        <div class="product-meta">
+            <span class="product-size">1 Kg</span>
+            <h3>Village Sweets Box</h3>
+            <div class="price-row">
+                <div class="price-group">
+                    <span class="old-price">₹450</span>
+                    <span class="new-price">₹350</span>
+                </div>
+                <a href="{{ url_for('checkout') }}" class="add-btn">ADD +</a>
+            </div>
+        </div>
+    </article>
+
+    <article class="product-card" data-category="sweets">
+        <div class="product-tag discount">19% OFF</div>
+        <div class="product-image img-jamun"></div>
+        <div class="product-meta">
+            <span class="product-size">2 pcs</span>
+            <h3>Fresh Gulab Jamun</h3>
+            <div class="price-row">
+                <div class="price-group">
+                    <span class="old-price">₹120</span>
+                    <span class="new-price">₹95</span>
+                </div>
+                <a href="{{ url_for('checkout') }}" class="add-btn">ADD +</a>
+            </div>
+        </div>
+    </article>
+
+    <article class="product-card" data-category="sweets">
+        <div class="product-tag discount">16% OFF</div>
+        <div class="product-image img-milkcake"></div>
+        <div class="product-meta">
+            <span class="product-size">250 g</span>
+            <h3>Milk Cake</h3>
+            <div class="price-row">
+                <div class="price-group">
+                    <span class="old-price">₹240</span>
+                    <span class="new-price">₹200</span>
+                </div>
+                <a href="{{ url_for('checkout') }}" class="add-btn">ADD +</a>
+            </div>
+        </div>
+    </article>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const tabs = document.querySelectorAll('.category-pill');
+        const cards = document.querySelectorAll('.product-card');
+
+        tabs.forEach((tab) => {
+            tab.addEventListener('click', function () {
+                const filter = this.dataset.filter;
+
+                tabs.forEach((btn) => btn.classList.toggle('active', btn === tab));
+
+                cards.forEach((card) => {
+                    const match = filter === 'all' || card.dataset.category === filter;
+                    card.style.display = match ? 'block' : 'none';
+                });
+            });
+        });
+    });
+</script>
 {% endblock %}
-
-
 
